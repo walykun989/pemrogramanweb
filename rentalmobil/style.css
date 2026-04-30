@@ -11,6 +11,7 @@
 
 body {
     margin: 0;
+    background-color: #fff9f0;
 }
 
 .title {
@@ -61,7 +62,7 @@ body {
     padding: 0.5em 1em;
     border: none;
     border-radius: 0.5em;
-    background-color: #ff0055;
+    background-color: #ff006f;
     color: rgb(255, 255, 255);
     cursor: pointer;
 }
@@ -75,6 +76,7 @@ body {
     align-items: start;
     max-width: 80rem;
     margin: 0 auto;
+    background-color: #fff9f0;
 }
 
 .car-list h2 {
