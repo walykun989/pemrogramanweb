@@ -1,0 +1,778 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #000000;
+    color: #ffffff;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; 
+    overflow-x: hidden;
+    line-height: 2.0; 
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+
+.viaoda {
+    font-family: 'Viaoda Libre', serif;
+}
+
+.helvetica {
+    font-family: "Helvetica Neue", Helvetica, sans-serif;
+}
+
+
+/* loading screen di awal web biar kaya game ceritanya ygy*/
+#intro-screen {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+    background-color: #050505;
+}
+
+.bg-video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -1;
+    opacity: 0.5;
+}
+
+.bubble-container {
+    background: rgba(10, 10, 10, 0.8);
+    padding: 40px 50px;
+    border: 1px solid #333;
+    border-radius: 5px;
+    text-align: center;
+    backdrop-filter: blur(10px);
+}
+
+.bubble-container h1 {
+    font-family: 'Viaoda Libre', serif;
+    font-size: 35px;
+    margin-bottom: 20px;
+    color: #ffffff;
+    letter-spacing: 2px;
+}
+
+#btn-lanjut {
+    padding: 12px 25px;
+    background: transparent;
+    color: white;
+    border: 1px solid white;
+    cursor: pointer;
+    font-family: "Helvetica Neue", Helvetica, sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: 0.3s;
+}
+
+#btn-lanjut:hover {
+    background: white;
+    color: black;
+}
+
+
+/* header sama navbar*/
+
+header {
+    display: flex;
+    justify-content: space-between; 
+    align-items: center;
+    padding: 25px 50px;
+    background-color: #000;
+    border-bottom: 1px solid #222;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.logo a {
+    color: #8b8b8b;
+    text-decoration: none;
+    font-family: 'Viaoda Libre', serif;
+    font-size: 21px;
+    letter-spacing: 2px;
+}
+
+.logo a:hover, .logo a.active {
+    color: white;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 50px;
+}
+
+nav ul li a {
+    color: #8b8b8b;
+    text-decoration: none;
+    font-family: "Helvetica Neue", Helvetica, sans-serif;
+    text-transform: uppercase;
+    font-size: 11px;
+    letter-spacing: 1px;
+    transition: color 0.3s;
+}
+
+nav ul li a:hover, nav ul li a.active {
+    color: white;
+}
+
+
+
+
+/* slide 1, yang ada logo di belakangnya ada tulisan brand mY*/
+
+.slide-hero {
+    min-height: 100vh;
+    width: 100%;
+    position: relative;
+    overflow: hidden;
+    background: url(../AsetUTS/pp.png) no-repeat center center;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.hero-overlay {
+    position: relative;
+    z-index: 10;
+    text-align: center;
+    width: 100%;
+}
+
+
+.main-logo {
+    width: 75%; 
+    max-width: 650px;
+    z-index: 2;
+    height: auto;
+    transition: all 0.5s ease-in-out;
+}
+
+.main-logo:hover {
+    transform: scale(1.1);
+}
+
+.top-tagline {
+    position: absolute;
+    top: 40px; 
+    left: 50%;
+    transform: translateX(-50%); 
+    font-family: 'Viaoda Libre', serif;
+    color: #ff0000; 
+    font-style: bold;
+    font-size: 15px;
+    z-index: 20;
+    white-space: nowrap; 
+}
+
+.bottom-tagline {
+    position: absolute;
+    bottom: 40px; 
+    left: 50%;
+    transform: translateX(-50%); 
+    font-family: 'Viaoda Libre', serif; 
+    color: #ff0000; 
+    font-size: 15px;
+    z-index: 20;
+    letter-spacing: 1px;
+}
+
+.hero-center-container {
+    position: relative; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+
+/* teks eye of zaharoz di belakang logo */
+.hero-bg-text {
+    position: absolute; 
+    font-family: 'Viaoda Libre', serif;
+    color: #ff0000; 
+    font-size: 175px; 
+    font-weight: normal;
+    font-style: italic;
+    word-spacing: 45px;
+    z-index: 1; 
+    white-space: nowrap;
+    transition: all 0.5s ease-in-out;
+}
+
+.hero-bg-text:hover {
+    transform: scale(1.1);
+}
+
+/* slide 2 yang isinya deskripsi brand mY*/
+
+.slide-intro {
+    min-height: 100vh; 
+    background: #000;
+    display: flex; 
+    align-items: center; 
+    justify-content: center;
+    position: relative; 
+    padding: 100px 50px;
+}
+
+.intro-grid {
+    display: grid; 
+    grid-template-columns: 1fr 1fr; 
+    row-gap: 150px; 
+    column-gap: 50px;
+    width: 100%; 
+    max-width: 1400px; 
+    z-index: 2;
+    align-items: start;
+}
+
+.intro-title h3 { 
+    font-size: 24px; 
+    font-weight: normal;
+    word-spacing: 20px; 
+    text-align: left; 
+}
+
+.intro-desc {
+    display: flex;
+    justify-content: flex-end; 
+    margin-top: 80px; 
+}
+
+.intro-desc p { 
+    color: #fff; 
+    line-height: 1.8; 
+    font-size: 18px;
+    text-align: right; 
+    max-width: 500px; 
+}
+
+.bg-3d-element {
+    position: absolute; 
+    width: 60%; 
+    max-width: 800px;
+    top: 50%; 
+    left: 50%; 
+    transform: translate(-50%, -50%);
+    opacity: 0.8; 
+    z-index: 1;
+}
+
+
+/* slide 3, yang isinya yapping */
+
+.slide-profile {
+    min-height: 100vh;
+    background-color: #ffffff;
+    color: #000000;
+    padding: 100px 50px; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Viaoda Libre', serif;
+}
+
+.profile-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr; 
+    column-gap: 50px; 
+    row-gap: 0px; 
+    max-width: 1400px; 
+    width: 100%;
+    align-items: start;
+}
+
+.profile-main-text p {
+    font-size: 27px;
+    line-height: 1.4;
+    text-align: justify;
+    letter-spacing: -1px;
+}
+
+.profile-image-container {
+    display: flex;
+    justify-content: flex-end; 
+}
+
+.img-small {
+    width: 100%;
+    max-width: 400px; 
+    height: auto;
+    filter: grayscale(0%);
+    transition: all 1s ease-in-out;
+}
+
+.img-small:hover {
+    transform: scale(0.9);
+    filter: grayscale(100%);
+}
+
+
+.profile-sub-text-container {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end; 
+    padding-right: 10px; 
+}
+
+.sub-profile-text {
+    font-size: 18px;
+    line-height: 1.4;
+    text-align: right;
+    max-width: 550px;
+}
+
+.bg-caption-box {
+    width: 100%;
+    max-width: 550px;
+    margin-top: 20px;
+    text-align: right;
+}
+
+.bg-caption-box hr {
+    border: 0;
+    border-top: 1px solid #000;
+    margin-bottom: 8px;
+}
+
+.bg-caption-box p {
+    font-size: 15px;
+}
+
+.profile-quote-container {
+    width: 100%;
+    max-width: 400px; 
+    display: flex;
+    flex-direction: column;
+    margin-left: auto; 
+}
+
+.quote-line1 {
+    font-size: 19px;
+    text-align: left;
+    letter-spacing: -0.5px; 
+}
+
+.quote-line2 {
+    font-size: 19px;
+    text-align: right; 
+    margin-top: 5px;
+    letter-spacing: -0.5px;
+}
+
+
+/* slide 4, ceritanya juala, semoga ada yang beneran beli (amiin) */
+
+.slide-store {
+    min-height: 100vh;
+    background-color: #ffffff;
+    color: #000000;
+    padding: 100px 50px; 
+    font-family: "Helvetica Neue", Helvetica, sans-serif;
+}
+
+.store-container {
+    max-width: 1400px;
+    margin: 0 auto;
+    width: 100%;
+}
+
+.store-header {
+    display: flex;
+    justify-content: space-between; 
+    align-items: flex-end;
+    padding-bottom: 5px;
+}
+
+.store-header h2 {
+    font-size: 50px;
+    font-weight: bold;
+    letter-spacing: -2px; 
+    margin: 0;
+}
+
+.store-header p {
+    font-size: 35px;
+    margin: 0;
+    word-spacing: 15px; 
+}
+
+.store-line {
+    border: 0;
+    border-top: 2px solid #000; 
+    margin: 0 0 60px 0; 
+}
+
+
+.product-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr; 
+    gap: 60px;
+}
+
+.product-card img {
+    width: 100%;
+    height: auto;
+    border: 1px solid #eee;
+}
+
+.prod-info h4 {
+    font-size: 25px;
+    margin-top: 20px;
+    margin-bottom: 5px;
+    font-weight: normal;
+}
+
+.buy-btn {
+    display: inline-block;
+    color: #000;
+    text-decoration: none;
+    font-weight: bold;
+    border-bottom: 1px solid #000;
+    padding-bottom: 2px;
+    margin-top: 10px;
+    transition: all 0.3s ease-in-out; 
+}
+
+.buy-btn:hover {
+    color: #ff0000; 
+    border-bottom-color: #ff0000; 
+    transform: scale(1.1); 
+}
+
+
+
+/* footer footer footer footer footer footer footer footer footer footer footer footer*/
+
+.main-footer {
+    background-color: #000000;
+    color: #ffffff;
+    padding: 100px 50px 40px; 
+    text-align: center;
+}
+
+
+.footer-container {
+    max-width: 1400px; 
+    margin: 0 auto;
+    width: 100%;
+}
+
+.footer-title {
+    font-family: 'Viaoda Libre', serif;
+    font-style: italic;
+    font-size: 75px;
+    margin-bottom: 80px;
+}
+
+
+.footer-links {
+    display: flex;
+    justify-content: center;
+    gap: 80px;
+    margin-bottom: 100px;
+}
+
+.f-link {
+    font-family: 'Viaoda Libre', serif;
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 45px;
+    font-style: italic;
+    transition: all ease-in-out 0.4s;
+}
+
+.f-link:hover {
+    transform: scale(1.1);
+    color: #ff0000;
+}
+
+.footer-bottom {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    text-align: left;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 11px;
+    color: #888;
+    border-top: 1px solid #333;
+    padding-top: 30px;
+    width: 100%; 
+}
+
+.fb-col:nth-child(1),
+.fb-col:nth-child(2) {
+    text-align: left;
+}
+
+.fb-col:nth-child(3) {
+    text-align: center;
+}
+
+.fb-col:nth-child(4),
+.fb-col:nth-child(5) {
+    text-align: right;
+}
+
+
+/* contact, biar ada orang yang hubungin mY*/
+.contact-main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 80vh;
+    padding: 60px 20px;
+}
+
+.contact-wrapper {
+    width: 100%;
+    max-width: 600px;
+}
+
+.contact-wrapper h1 {
+    font-family: 'Viaoda Libre', serif;
+    font-size: 50px;
+}
+
+.contact-wrapper p {
+    color: #888;
+    margin-bottom: 40px;
+    font-size: 16px;
+}
+
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+.input-group {
+    display: flex;
+    flex-direction: column;
+}
+
+.input-group label {
+    margin-bottom: 8px;
+    font-size: 13px;
+    color: #aaa;
+    text-transform: uppercase;
+}
+
+.input-group input,
+.input-group textarea {
+    background-color: transparent;
+    border: 1px solid #444;
+    color: #fff;
+    padding: 13px;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 15px;
+    outline: none;
+    transition: border-color 0.3s;
+}
+
+.input-group input:focus,
+.input-group textarea:focus {
+    border-color: #fff;
+}
+
+.submit-btn {
+    background-color: transparent;
+    color: #fff;
+    border: 1px solid #fff;
+    padding: 15px;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 13px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    cursor: pointer;
+    transition: 0.3s;
+    margin-top: 10px;
+}
+
+.submit-btn:hover {
+    background-color: #fff;
+    color: #000;
+}
+
+/*  product product product product product product product product product product, list baju baju mY yang harD abieZZZZ*/
+
+.bg-black {
+    background-color: #000000;
+    color: #ffffff;
+}
+
+.page-products {
+    padding: 60px 50px 100px;
+    font-family: "Helvetica Neue", Helvetica, sans-serif;
+    min-height: 100vh;
+}
+
+.prod-page-container {
+    max-width: 1400px; 
+    margin: 0 auto;
+    width: 100%;
+}
+
+.prod-page-title {
+    font-size: 50px;
+    font-weight: bold;
+    letter-spacing: 1px;
+    margin-bottom: 50px;
+    text-transform: uppercase;
+    color: #ffffff;
+}
+
+.prod-grid-8 {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); 
+    column-gap: 20px; 
+    row-gap: 50px; 
+    margin-bottom: 80px;
+}
+
+.prod-card-ui {
+    display: flex;
+    flex-direction: column;
+    cursor: pointer; 
+}
+
+.prod-img-wrapper {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 3/4; 
+    overflow: hidden;
+    background-color: #111; 
+}
+
+.prod-img-wrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.prod-card-ui:hover .prod-img-wrapper img {
+    transform: scale(1.1); 
+}
+
+.badge-new {
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: #ffffff; 
+    color: #000000;
+    font-size: 10px;
+    font-weight: bold;
+    padding: 6px 12px;
+    z-index: 2;
+}
+
+.prod-ui-info {
+    margin-top: 15px;
+    text-align: left;
+}
+
+.prod-ui-brand {
+    font-size: 0.7rem;
+    color: #888888; 
+    margin-bottom: 5px;
+}
+
+.prod-ui-name {
+    font-size: 0.95rem;
+    color: #ffffff;
+    margin-bottom: 5px;
+    font-weight: normal;
+}
+
+.prod-ui-price {
+    font-size: 0.95rem;
+    color: #bbbbbb; /* Warna harga sedikit diredupkan */
+}
+
+/* Tombol View More di tengah bawah */
+.view-more-box {
+    text-align: center;
+}
+
+.btn-view-more {
+    background: transparent;
+    color: #ffffff;
+    border: 1px solid #555555; /* Garis tepi abu-abu elegan */
+    padding: 15px 60px;
+    font-size: 0.9rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.btn-view-more:hover {
+    background: #ffffff;
+    color: #000000; /* Balik warna saat di-hover */
+    border-color: #ffffff;
+}
+
+/* --- Penyesuaian Footer Simple untuk Halaman Produk --- */
+.simple-footer {
+    padding-top: 40px; /* Mengurangi jarak atas karena sudah tidak ada judul besar */
+    padding-bottom: 40px;
+}
+
+/* Pastikan display block agar tag <a> berfungsi sempurna sebagai container gambar */
+a.prod-img-wrapper {
+    display: block;
+    text-decoration: none;
+}
+
+
+/* kata adil diginiin biar responsif */
+
+@media (max-width: 1024px) {
+    .prod-grid-8 {
+        grid-template-columns: repeat(2, 1fr); 
+    }
+}
+
+@media (max-width: 768px) {
+    .prod-grid-8 {
+        grid-template-columns: 1fr; 
+    }
+    .page-products {
+        padding: 40px 20px;
+    }
+}
+
+@media (max-width: 1024px) {
+     .intro-grid {
+        max-width: 100%;
+        gap: 50px;
+    }
+}
+
+@media (max-width: 768px) {
+    header { padding: 20px; flex-direction: column; gap: 20px; }
+    
+    .slide-intro { padding: 80px 20px; }
+    .intro-grid, .profile-container, .product-grid { flex-direction: column; gap: 40px; }
+    .intro-col, .profile-text, .profile-visual { width: 100%; }
+    
+    .footer-bottom { grid-template-columns: 1fr; gap: 20px; text-align: center; }
+    .footer-links { flex-direction: column; gap: 30px; }
+    .footer-title { font-size: 30px; }
+}
