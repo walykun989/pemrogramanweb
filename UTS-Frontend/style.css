@@ -704,10 +704,10 @@ nav ul li a:hover, nav ul li a.active {
 
 .prod-ui-price {
     font-size: 0.95rem;
-    color: #bbbbbb; /* Warna harga sedikit diredupkan */
+    color: #bbbbbb; 
 }
 
-/* Tombol View More di tengah bawah */
+
 .view-more-box {
     text-align: center;
 }
@@ -715,7 +715,7 @@ nav ul li a:hover, nav ul li a.active {
 .btn-view-more {
     background: transparent;
     color: #ffffff;
-    border: 1px solid #555555; /* Garis tepi abu-abu elegan */
+    border: 1px solid #555555; 
     padding: 15px 60px;
     font-size: 0.9rem;
     cursor: pointer;
@@ -724,17 +724,14 @@ nav ul li a:hover, nav ul li a.active {
 
 .btn-view-more:hover {
     background: #ffffff;
-    color: #000000; /* Balik warna saat di-hover */
+    color: #000000; 
     border-color: #ffffff;
 }
-
-/* --- Penyesuaian Footer Simple untuk Halaman Produk --- */
 .simple-footer {
-    padding-top: 40px; /* Mengurangi jarak atas karena sudah tidak ada judul besar */
+    padding-top: 40px; 
     padding-bottom: 40px;
 }
 
-/* Pastikan display block agar tag <a> berfungsi sempurna sebagai container gambar */
 a.prod-img-wrapper {
     display: block;
     text-decoration: none;
